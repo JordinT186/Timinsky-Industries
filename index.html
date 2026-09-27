@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Timinsky Industries | Electrical and Automation Engineering</title>
+<meta name="description" content="Timinsky Industries provides industrial automation, control panel design, and power systems engineering. Miami, Florida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --paper: #F5F7F9;
+    --ink: #15202C;
+    --navy: #0E2742;
+    --steel: #5A6878;
+    --rule: #DCE1E7;
+    --accent: #2C6CB0;
+    --font: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Header */
+  .site-header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--white);
+    border-bottom: 1px solid var(--rule);
+  }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 4.5rem; gap: 1.5rem; }
+  .wordmark {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .site-nav { display: flex; align-items: center; gap: 2rem; }
+  .site-nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.975rem; }
+  .site-nav a:hover { color: var(--accent); }
+  .site-nav .nav-cta {
+    color: var(--white); background: var(--navy);
+    padding: 0.55rem 1.1rem; border-radius: 4px;
+  }
+  .site-nav .nav-cta:hover { background: var(--accent); color: var(--white); }
+
+  /* Hero */
+  .hero { background: var(--navy); color: var(--white); padding: 6rem 0 5.5rem; }
+  .hero h1 {
+    font-size: clamp(2.25rem, 5vw, 3.6rem);
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 0 0 1.5rem;
+    max-width: 20ch;
+  }
+  .hero p { font-size: 1.2rem; color: #C3CFDC; max-width: 38rem; margin: 0 0 2.5rem; }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 600;
+    padding: 0.85rem 1.5rem; border-radius: 4px; border: 2px solid transparent;
+  }
+  .btn-light { background: var(--white); color: var(--navy); }
+  .btn-light:hover { background: #DCE6F2; }
+  .btn-outline { border-color: rgba(255,255,255,0.5); color: var(--white); margin-left: 0.75rem; }
+  .btn-outline:hover { border-color: var(--white); }
+  .btn-dark { background: var(--navy); color: var(--white); }
+  .btn-dark:hover { background: var(--accent); }
+
+  .hero-disciplines {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    margin-top: 5rem; border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .hero-disciplines div { padding: 1.5rem 1.5rem 0 0; }
+  .hero-disciplines strong { display: block; font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem; }
+  .hero-disciplines span { color: #A9B8C8; font-size: 0.95rem; }
+
+  /* Sections */
+  section { padding: 5.5rem 0; }
+  section.alt { background: var(--paper); }
+  h2 {
+    font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+    line-height: 1.2; font-weight: 600; letter-spacing: -0.01em;
+    color: var(--navy); margin: 0 0 1rem;
+  }
+  .intro { color: var(--steel); max-width: 42rem; margin: 0 0 3.5rem; font-size: 1.1rem; }
+
+  /* Services */
+  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem 4rem; }
+  .service h3 { font-size: 1.25rem; font-weight: 600; color: var(--navy); margin: 0 0 0.6rem; }
+  .service p { margin: 0 0 1rem; color: var(--ink); }
+  .service ul { margin: 0; padding-left: 1.1rem; color: var(--steel); }
+  .service li { margin-bottom: 0.3rem; }
+
+  /* Experience */
+  .experience { display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem; }
+  .project { padding: 1.75rem 0; border-top: 1px solid var(--rule); }
+  .project h3 { font-size: 1.125rem; font-weight: 600; color: var(--navy); margin: 0 0 0.4rem; }
+  .project p { margin: 0; color: var(--steel); }
+
+  /* Technology */
+  .tech { width: 100%; border-collapse: collapse; }
+  .tech-scroll { overflow-x: auto; }
+  .tech th, .tech td { text-align: left; vertical-align: top; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+  .tech tr:last-child th, .tech tr:last-child td { border-bottom: 1px solid var(--rule); }
+  .tech th { width: 14rem; font-weight: 600; color: var(--navy); padding-right: 2rem; }
+  .tech td { color: var(--ink); }
+
+  /* Credentials */
+  .credentials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .credential { border-left: 3px solid var(--navy); padding-left: 1.25rem; }
+  .credential h3 { font-size: 1.1rem; font-weight: 600; color: var(--navy); margin: 0 0 0.35rem; }
+  .credential p { margin: 0; color: var(--steel); }
+
+  /* Contact */
+  .contact { background: var(--navy); color: var(--white); }
+  .contact h2 { color: var(--white); }
+  .contact .intro { color: #C3CFDC; margin-bottom: 2.5rem; }
+  .contact-details { margin-top: 2rem; color: #A9B8C8; }
+  .contact-details a { color: var(--white); }
+
+  footer { background: #0A1D33; color: #8B9BAD; font-size: 0.9rem; padding: 1.75rem 0; }
+
+  @media (max-width: 860px) {
+    .services, .experience, .credentials { grid-template-columns: 1fr; }
+    .services { gap: 2.5rem; }
+    .hero-disciplines { grid-template-columns: 1fr; margin-top: 3.5rem; }
+    .site-nav a:not(.nav-cta) { display: none; }
+    .tech th { width: 10rem; }
+  }
+  @media (max-width: 520px) {
+    .hero { padding: 4rem 0; }
+    section { padding: 4rem 0; }
+    .btn-outline { margin: 0.75rem 0 0; }
+    .tech th, .tech td { display: block; width: auto; }
+    .tech td { border-top: 0; padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Timinsky Industries</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#technology">Technology</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Electrical and automation engineering for industrial machinery.</h1>
+      <p>Timinsky Industries designs, programs, and commissions control systems for production equipment, backed by power systems engineering experience at the highest levels of rigor.</p>
+      <a class="btn btn-light" href="#contact">Request a consultation</a>
+      <a class="btn btn-outline" href="#services">View services</a>
+
+      <div class="hero-disciplines">
+        <div><strong>Industrial automation</strong><span>PLC, HMI, drives, and servo motion</span></div>
+        <div><strong>Electrical design</strong><span>Control panels, schematics, and documentation</span></div>
+        <div><strong>Power systems</strong><span>Distribution, coordination, and Class 1E design</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <p class="intro">Engineering support from initial design through factory acceptance and startup, for new equipment and existing lines.</p>
+
+      <div class="services">
+        <div class="service">
+          <h3>Controls programming and commissioning</h3>
+          <p>PLC logic and HMI development for packaging and material handling equipment, taken through startup on the floor.</p>
+          <ul>
+            <li>Machine sequencing, fault handling, and reset logic</li>
+            <li>Servo motion and variable frequency drive integration</li>
+            <li>Vision and sensor integration for inspection and reject</li>
+          </ul>
+        </div>
+        <div class="service">
+          <h3>Control panel and electrical design</h3>
+          <p>Schematics and panel design that are buildable, serviceable, and fully documented.</p>
+          <ul>
+            <li>Electrical schematics and redlines</li>
+            <li>Drive, motor, and component sizing</li>
+            <li>Bills of materials and engineering change control</li>
+          </ul>
+        </div>
+        <div class="service">
+          <h3>Troubleshooting and field support</h3>
+          <p>Root-cause diagnosis for equipment that is down, intermittent, or never ran right.</p>
+          <ul>
+            <li>Industrial network and drive communication faults</li>
+            <li>Sensor, pneumatic, and I/O issues</li>
+            <li>Retrofits and control upgrades on existing machines</li>
+          </ul>
+        </div>
+        <div class="service">
+          <h3>Power systems engineering</h3>
+          <p>Facility power distribution and protection, informed by nuclear-grade design practice.</p>
+          <ul>
+            <li>Switchgear and motor control center design</li>
+            <li>ETAP modeling and protective device coordination</li>
+            <li>Class 1E safety-related electrical design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="alt">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="intro">Representative project experience across automated production equipment.</p>
+
+      <div class="experience">
+        <div class="project">
+          <h3>Bottling, capping, and filling machinery</h3>
+          <p>Controls design and commissioning for cappers, overflow fillers, and bottle rinsers, including multi-drive systems and servo-driven axes.</p>
+        </div>
+        <div class="project">
+          <h3>Container handling and orientation</h3>
+          <p>Servo-driven bottle orienting with fiber-optic detection, and multi-lane pneumatic diverting for high-throughput conveyors.</p>
+        </div>
+        <div class="project">
+          <h3>Pharmaceutical code verification</h3>
+          <p>Barcode match-and-reject stations integrating machine vision with PLC-timed reject mechanisms.</p>
+        </div>
+        <div class="project">
+          <h3>Industrial network diagnostics</h3>
+          <p>Resolution of Modbus RTU communication failures across daisy-chained drive networks, from wiring and serial settings to addressing errors in logic.</p>
+        </div>
+        <div class="project">
+          <h3>Factory acceptance testing</h3>
+          <p>FAT and commissioning protocols for complete bottling lines, including Spanish-language documentation for plant teams.</p>
+        </div>
+        <div class="project">
+          <h3>Nuclear power systems</h3>
+          <p>Electrical design for safety-related Class 1E power systems, including distribution equipment and protective coordination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="technology">
+    <div class="wrap">
+      <h2>Technology</h2>
+      <p class="intro">Platforms and equipment in active use.</p>
+
+      <div class="tech-scroll">
+        <table class="tech">
+          <tr><th scope="row">Controllers</th><td>AutomationDirect CLICK and CLICK PLUS, Omron NX1P2 (Sysmac Studio)</td></tr>
+          <tr><th scope="row">Operator interfaces</th><td>Weintek HMI</td></tr>
+          <tr><th scope="row">Motion</th><td>Teknic ClearPath, Omron 1S servo systems</td></tr>
+          <tr><th scope="row">Drives</th><td>TECO L510, WEG CFW320, Invertek Optidrive E3, AutomationDirect DuraPulse</td></tr>
+          <tr><th scope="row">Networks</th><td>Modbus RTU (RS-485), EtherCAT</td></tr>
+          <tr><th scope="row">Vision and sensing</th><td>Cognex DataMan, Autonics fiber amplifiers, photoelectric and ultrasonic sensing</td></tr>
+          <tr><th scope="row">Pneumatics</th><td>SMC valves, cylinders, and air preparation</td></tr>
+          <tr><th scope="row">Power analysis</th><td>ETAP</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>Credentials</h2>
+      <p class="intro">Led by Jordin Timinsky.</p>
+      <div class="credentials">
+        <div class="credential">
+          <h3>MS, Electrical Engineering</h3>
+          <p>Florida International University, 2023</p>
+        </div>
+        <div class="credential">
+          <h3>Lead automation engineering</h3>
+          <p>Machine controls design and commissioning for production equipment</p>
+        </div>
+        <div class="credential">
+          <h3>Nuclear-grade design</h3>
+          <p>Class 1E power systems engineering experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Discuss your project</h2>
+      <p class="intro">New equipment, retrofits, commissioning support, or troubleshooting. Send a brief description of what you need.</p>
+      <a class="btn btn-light" href="mailto:jordin@timinskyindustries.com">Email Timinsky Industries</a>
+      <p class="contact-details"><a href="mailto:jordin@timinskyindustries.com">jordin@timinskyindustries.com</a> &nbsp;|&nbsp; Miami, Florida</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Timinsky Industries. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
