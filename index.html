@@ -4,183 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Timinsky Industries | Electrical and Automation Engineering</title>
-<meta name="description" content="Timinsky Industries provides industrial automation, control panel design, and power systems engineering. Miami, Florida.">
+<meta name="description" content="Timinsky Industries provides machine controls, control panel design, field support, and power systems engineering. Miami, Florida.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --black: #000000;
-    --white: #FFFFFF;
-    --gray: #A7A9AC;
-    --line: rgba(255,255,255,0.18);
-    --font: "Barlow", "D-DIN", "Helvetica Neue", Arial, sans-serif;
-    box-sizing: border-box;
-  }
-  *, *::before, *::after { box-sizing: inherit; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--font);
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--white); outline-offset: 4px; }
-
-  /* Header */
-  .site-header {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 20;
-    padding: calc(1.5rem + env(safe-area-inset-top, 0px)) 3rem 1.5rem;
-    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0));
-  }
-  .wordmark {
-    text-decoration: none; font-weight: 600; font-size: 1.1rem;
-    letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap;
-  }
-  .site-nav { display: flex; gap: 2.25rem; margin-left: auto; }
-  .site-nav a, .menu-toggle {
-    text-decoration: none; font-weight: 500; font-size: 0.8rem;
-    letter-spacing: 0.14em; text-transform: uppercase;
-  }
-  .site-nav a:hover { color: var(--gray); }
-  .menu-toggle {
-    background: none; border: 0; color: var(--white); cursor: pointer;
-    display: none; flex-direction: column; gap: 6px; padding: 6px 0;
-  }
-  .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--white); }
-
-  /* Slide-out menu */
-  .menu {
-    position: fixed; top: 0; right: 0; bottom: 0; z-index: 30;
-    width: min(22rem, 100%);
-    background: var(--black);
-    border-left: 1px solid var(--line);
-    padding: calc(5.5rem + env(safe-area-inset-top, 0px)) 2.5rem 2.5rem;
-    transform: translateX(100%);
-    transition: transform 0.35s ease;
-    visibility: hidden;
-  }
-  .menu.open { transform: translateX(0); visibility: visible; }
-  .menu a {
-    display: block; text-decoration: none; text-transform: uppercase;
-    letter-spacing: 0.12em; font-weight: 500; font-size: 1rem;
-    padding: 1rem 0; border-bottom: 1px solid var(--line);
-  }
-  .menu-close {
-    position: absolute; top: calc(1.5rem + env(safe-area-inset-top, 0px)); right: 2rem;
-    background: none; border: 0; color: var(--white); font-size: 2rem; line-height: 1; cursor: pointer;
-  }
-
-  /* Full-screen panels */
-  .panel {
-    position: relative;
-    min-height: 100vh;
-    min-height: 100svh;
-    display: flex; align-items: flex-end;
-    padding: 0 3rem 14vh;
-    background-color: var(--black);
-    background-image:
-      linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.45) 100%),
-      var(--img, none),
-      radial-gradient(ellipse at 70% 30%, #1B232C 0%, #000 65%);
-    background-size: cover; background-position: center;
-  }
-  .panel-content { max-width: 38rem; }
-  .label {
-    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--gray); margin: 0 0 0.75rem;
-  }
-  .panel h1, .panel h2 {
-    font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.02em; line-height: 1.05; margin: 0 0 1.25rem;
-  }
-  .panel h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
-  .panel h2 { font-size: clamp(2rem, 4.8vw, 3.5rem); }
-  .panel p.body { font-weight: 300; font-size: 1.15rem; margin: 0 0 2rem; max-width: 34rem; }
-
-  .btn {
-    display: inline-block; text-decoration: none;
-    border: 2px solid var(--white);
-    padding: 0.95rem 2.25rem;
-    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
-    transition: background-color 0.25s ease, color 0.25s ease;
-  }
-  .btn:hover { background: var(--white); color: var(--black); }
-
-  /* Hero load-in */
-  .hero .panel-content { animation: rise 1.1s ease-out 0.2s both; }
-  @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
-
-  /* Experience grid */
-  .experience { padding: 9rem 3rem 8rem; border-top: 1px solid var(--line); }
-  .experience-head { max-width: 38rem; margin-bottom: 4rem; }
-  .experience-head h2 {
-    font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em;
-    font-size: clamp(2rem, 4.8vw, 3.5rem); line-height: 1.05; margin: 0;
-  }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 3rem; }
-  .item { border-top: 1px solid var(--line); padding: 1.75rem 0 2.5rem; }
-  .item h3 {
-    font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-    margin: 0 0 0.6rem;
-  }
-  .item p { margin: 0; color: var(--gray); font-weight: 300; }
-
-  /* Credentials strip */
-  .credentials {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;
-    padding: 4rem 3rem; border-top: 1px solid var(--line);
-  }
-  .credentials strong {
-    display: block; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.1em;
-    text-transform: uppercase; margin-bottom: 0.35rem;
-  }
-  .credentials span { color: var(--gray); font-weight: 300; }
-
-  /* Footer */
-  footer {
-    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;
-    padding: 2.5rem 3rem calc(2.5rem + env(safe-area-inset-bottom, 0px));
-    border-top: 1px solid var(--line);
-    font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray);
-  }
-  footer nav { display: flex; gap: 2rem; flex-wrap: wrap; }
-  footer a { text-decoration: none; }
-  footer a:hover { color: var(--white); }
-
-  @media (max-width: 900px) {
-    .site-nav { display: none; }
-    .menu-toggle { display: flex; }
-    .grid, .credentials { grid-template-columns: 1fr; }
-    .credentials { gap: 2rem; }
-  }
-  @media (max-width: 560px) {
-    .site-header { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .wordmark { font-size: 0.9rem; letter-spacing: 0.16em; }
-    .panel { padding: 0 1.5rem 12vh; }
-    .experience { padding: 6rem 1.5rem 5rem; }
-    .credentials, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .hero .panel-content { animation: none; }
-    .menu { transition: none; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="site-header">
-  <a class="wordmark" href="#top">Timinsky Industries</a>
+  <a class="wordmark" href="index.html">Timinsky Industries</a>
   <nav class="site-nav" aria-label="Main">
-    <a href="#controls">Services</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+    <a href="controls.html">Controls</a><a href="electrical-design.html">Design</a><a href="field-support.html">Field support</a><a href="power-systems.html">Power</a>
+    <a href="index.html#contact">Contact</a>
   </nav>
   <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
     <span></span><span></span><span></span>
@@ -189,93 +25,59 @@
 
 <nav class="menu" id="menu" aria-label="Menu">
   <button class="menu-close" aria-label="Close menu">&times;</button>
-  <a href="#controls">Machine controls</a>
-  <a href="#panels">Electrical design</a>
-  <a href="#field">Field support</a>
-  <a href="#power">Power systems</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="controls.html">Machine controls and motion</a><a href="electrical-design.html">Control panel and electrical design</a><a href="field-support.html">Troubleshooting and field support</a><a href="power-systems.html">Power systems engineering</a>
+  <a href="index.html#contact">Contact</a>
 </nav>
 
-<main id="top">
-  <!-- Panel photos are free Unsplash images (unsplash.com/license).
-       To swap one, replace the URL in that panel's --img value with your own, e.g. url('images/hero.jpg'). -->
+<main>
 
   <section class="panel hero" style="--img: url('https://images.unsplash.com/photo-1647427060118-4911c9821b82?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
     <div class="panel-content">
       <p class="label">Timinsky Industries</p>
       <h1>Electrical and automation engineering</h1>
-      <p class="body">Control systems for industrial machinery, designed, programmed, and commissioned.</p>
-      <a class="btn" href="#contact">Request a consultation</a>
+      <p class="body">From the first schematic to the first good part off the line.</p>
+      <a class="btn" href="#services">See what we do</a>
     </div>
   </section>
 
-  <section class="panel" id="controls" style="--img: url('https://images.unsplash.com/photo-1655204903983-73007f15cb3e?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
+  <section class="section" id="services">
+    <p class="intro-text">Most machine projects get split between a controls contractor, a panel shop, and a power engineer. Timinsky Industries covers all three, so the schematic, the logic, and the startup are owned by the same engineer.</p>
+  </section>
+
+  <section class="panel" style="--img: url('https://images.unsplash.com/photo-1655204903983-73007f15cb3e?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
     <div class="panel-content">
       <p class="label">Services</p>
       <h2>Machine controls and motion</h2>
-      <p class="body">PLC logic, HMI development, servo motion, and drive integration for packaging and material handling equipment, taken through startup on the floor.</p>
-      <a class="btn" href="#contact">Discuss a project</a>
+      <p class="body">PLC logic, HMI screens, servo motion, and drives for packaging and material handling equipment.</p>
+      <a class="btn" href="controls.html">Explore machine controls</a>
     </div>
   </section>
 
-  <section class="panel" id="panels" style="--img: url('https://images.unsplash.com/photo-1780034766312-73825064806c?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
+  <section class="panel" style="--img: url('https://images.unsplash.com/photo-1780034766312-73825064806c?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
     <div class="panel-content">
       <p class="label">Services</p>
       <h2>Control panel and electrical design</h2>
-      <p class="body">Schematics, component sizing, bills of materials, and change control. Panels that are buildable, serviceable, and fully documented.</p>
-      <a class="btn" href="#contact">Discuss a project</a>
+      <p class="body">Schematics, component sizing, bills of materials, and documentation that keep machines buildable and supportable.</p>
+      <a class="btn" href="electrical-design.html">Explore electrical design</a>
     </div>
   </section>
 
-  <section class="panel" id="field" style="--img: url('https://images.unsplash.com/photo-1652715564391-38cc4475b7f5?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
+  <section class="panel" style="--img: url('https://images.unsplash.com/photo-1652715564391-38cc4475b7f5?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
     <div class="panel-content">
       <p class="label">Services</p>
       <h2>Troubleshooting and field support</h2>
-      <p class="body">Root-cause diagnosis for equipment that is down, intermittent, or never ran right, from network and drive faults to sensors and pneumatics.</p>
-      <a class="btn" href="#contact">Discuss a project</a>
+      <p class="body">Root-cause diagnosis for equipment that is down, intermittent, or never ran right.</p>
+      <a class="btn" href="field-support.html">Explore field support</a>
     </div>
   </section>
 
-  <section class="panel" id="power" style="--img: url('https://images.unsplash.com/photo-1738918937796-743064feefa1?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
+  <section class="panel" style="--img: url('https://images.unsplash.com/photo-1738918937796-743064feefa1?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
     <div class="panel-content">
       <p class="label">Services</p>
       <h2>Power systems engineering</h2>
-      <p class="body">Switchgear and motor control center design, ETAP modeling, and protective device coordination, informed by Class 1E nuclear design practice.</p>
-      <a class="btn" href="#contact">Discuss a project</a>
-    </div>
-  </section>
-
-  <section class="experience" id="experience">
-    <div class="experience-head">
-      <p class="label">Experience</p>
-      <h2>Representative work</h2>
-    </div>
-    <div class="grid">
-      <div class="item">
-        <h3>Bottling, capping, and filling</h3>
-        <p>Controls design and commissioning for cappers, overflow fillers, and bottle rinsers, including multi-drive systems and servo axes.</p>
-      </div>
-      <div class="item">
-        <h3>Container handling</h3>
-        <p>Servo-driven bottle orienting with fiber-optic detection, and multi-lane pneumatic diverting for conveyors.</p>
-      </div>
-      <div class="item">
-        <h3>Pharmaceutical code verification</h3>
-        <p>Barcode match-and-reject stations integrating machine vision with PLC-timed reject.</p>
-      </div>
-      <div class="item">
-        <h3>Industrial network diagnostics</h3>
-        <p>Resolution of Modbus RTU failures across daisy-chained drive networks, from wiring and serial settings to addressing errors in logic.</p>
-      </div>
-      <div class="item">
-        <h3>Factory acceptance testing</h3>
-        <p>FAT and commissioning protocols for complete bottling lines, including Spanish-language documentation.</p>
-      </div>
-      <div class="item">
-        <h3>Nuclear power systems</h3>
-        <p>Electrical design for safety-related Class 1E power systems, including distribution and protective coordination.</p>
-      </div>
+      <p class="body">Distribution, protective coordination, and Class 1E design, informed by nuclear-grade engineering practice.</p>
+      <a class="btn" href="power-systems.html">Explore power systems</a>
     </div>
   </section>
 
@@ -285,44 +87,26 @@
     <div><strong>Nuclear-grade design</strong><span>Class 1E power systems experience</span></div>
   </section>
 
-  <section class="panel" id="contact" style="--img: url('https://images.unsplash.com/photo-1653108951561-b9198632de97?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
+  <section class="panel short" id="contact" style="--img: url('https://images.unsplash.com/photo-1653108951561-b9198632de97?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
     <div class="panel-content">
       <p class="label">Contact</p>
       <h2>Discuss your project</h2>
       <p class="body">New equipment, retrofits, commissioning support, or troubleshooting. Miami, Florida.</p>
-      <a class="btn" href="mailto:jordin@timinskyindustries.com">jordin@timinskyindustries.com</a>
+      <a class="btn" href="mailto:jordin@timinskyindustries.com?subject=Project%20inquiry">jordin@timinskyindustries.com</a>
     </div>
   </section>
+
 </main>
 
 <footer>
   <span>Timinsky Industries &copy; 2026</span>
   <nav aria-label="Footer">
-    <a href="#controls">Services</a>
-    <a href="#experience">Experience</a>
+    <a href="index.html">Home</a>
+    <a href="controls.html">Controls</a><a href="electrical-design.html">Design</a><a href="field-support.html">Field support</a><a href="power-systems.html">Power</a>
     <a href="mailto:jordin@timinskyindustries.com">Contact</a>
   </nav>
 </footer>
 
-<script>
-  (function () {
-    var toggle = document.querySelector('.menu-toggle');
-    var menu = document.getElementById('menu');
-    var close = menu.querySelector('.menu-close');
-    function setOpen(open) {
-      menu.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-      if (open) { close.focus(); } else { toggle.focus(); }
-    }
-    toggle.addEventListener('click', function () { setOpen(true); });
-    close.addEventListener('click', function () { setOpen(false); });
-    menu.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); });
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menu.classList.contains('open')) setOpen(false);
-    });
-  })();
-</script>
+<script src="script.js"></script>
 </body>
 </html>

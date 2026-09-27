@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Troubleshooting and field support | Timinsky Industries</title>
+<meta name="description" content="Root-cause diagnosis for equipment that is down, intermittent, or never ran right, from network and drive faults to sensors and pneumatics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="index.html">Timinsky Industries</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="controls.html">Controls</a><a href="electrical-design.html">Design</a><a href="field-support.html" aria-current="page">Field support</a><a href="power-systems.html">Power</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu">
+  <button class="menu-close" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="controls.html">Machine controls and motion</a><a href="electrical-design.html">Control panel and electrical design</a><a href="field-support.html">Troubleshooting and field support</a><a href="power-systems.html">Power systems engineering</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+
+<main>
+
+  <section class="panel hero" style="--img: url('https://images.unsplash.com/photo-1652715564391-38cc4475b7f5?fm=jpg&amp;q=70&amp;w=2000&amp;auto=format&amp;fit=crop');">
+    <div class="panel-content">
+      <p class="label">Services</p>
+      <h1>Troubleshooting and field support</h1>
+      <p class="body">Root-cause diagnosis for equipment that is down, intermittent, or never ran right, from network and drive faults to sensors and pneumatics.</p>
+      <a class="btn" href="mailto:jordin@timinskyindustries.com?subject=Field%20support%20request">Request field support</a>
+      <a class="btn ghost" href="#included">What's included</a>
+    </div>
+  </section>
+
+  <section class="section" id="included">
+    <div class="section-head"><p class="label">Scope</p><h2>What's included</h2></div>
+    <div class="grid"><div class="item"><h3>Network and communication faults</h3><p>Modbus RTU and RS-485 diagnosis: wiring, termination, serial settings, and addressing.</p></div><div class="item"><h3>Drive and motion faults</h3><p>Variable frequency drive and servo faults traced to parameters, wiring, mechanics, or logic.</p></div><div class="item"><h3>Sensors and I/O</h3><p>Misfiring, double-triggering, and wiring-polarity problems, with replacement sensor selection when the original is wrong for the job.</p></div><div class="item"><h3>Pneumatics</h3><p>Valve and solenoid faults, including electrical causes like supply voltage sagging under load.</p></div><div class="item"><h3>Retrofits and upgrades</h3><p>Adding functions to existing machines, often by repurposing I/O already in the panel.</p></div><div class="item"><h3>Commissioning support</h3><p>Extra hands and a second set of eyes when a startup is running long.</p></div></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><p class="label">Experience</p><h2>Representative work</h2></div>
+    <div class="grid"><div class="item"><h3>Multi-drive Modbus networks</h3><p>Traced a capper’s communication failure across four daisy-chained drives to a slave ID conflict buried in ladder logic.</p></div><div class="item"><h3>Sensor retrofit</h3><p>Added cap-level detection to an existing machine by repurposing a spare PLC input, and resolved a wiring polarity fault at startup.</p></div><div class="item"><h3>Solenoid valve diagnosis</h3><p>Isolated an intermittent valve failure to supply voltage collapsing under load rather than the valve itself.</p></div></div>
+    <p style="margin-top:3rem"><a class="btn" href="mailto:jordin@timinskyindustries.com?subject=Field%20support%20request">Request field support</a></p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><p class="label">Also available</p><h2>Other services</h2></div>
+    <div class="others"><a href="controls.html">Machine controls and motion<span>PLC logic, HMI screens, servo motion, and drives for packaging and material handling equipment.</span></a><a href="electrical-design.html">Control panel and electrical design<span>Schematics, component sizing, bills of materials, and documentation that keep machines buildable and supportable.</span></a><a href="power-systems.html">Power systems engineering<span>Distribution, protective coordination, and Class 1E design, informed by nuclear-grade engineering practice.</span></a></div>
+  </section>
+
+</main>
+
+<footer>
+  <span>Timinsky Industries &copy; 2026</span>
+  <nav aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="controls.html">Controls</a><a href="electrical-design.html">Design</a><a href="field-support.html">Field support</a><a href="power-systems.html">Power</a>
+    <a href="mailto:jordin@timinskyindustries.com">Contact</a>
+  </nav>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
